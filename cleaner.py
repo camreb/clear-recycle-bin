@@ -7,6 +7,7 @@ class Cleaner:
         self.disc = disc
         self.path = os.path.join(self.disc, "\$RECYCLE.BIN")
 
+#Function returns list with all files' paths to be deleted
     def pathing(self):
         files_to_delete = []
 
@@ -18,6 +19,7 @@ class Cleaner:
                     files_to_delete.append(path)
         return files_to_delete
 
+#Function removes suitable files from Recycle Bin and creates raport.txt file.
     def remover(self, lista):
         if os.path.exists("raport.txt"):
             os.remove("raport.txt")
